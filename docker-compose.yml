@@ -1,0 +1,9 @@
+services:
+  web:
+    container_name: porte-folio
+    build:
+      context: .                 # le projet entier est accessible
+      dockerfile: ./nginx/Dockerfile
+    ports:
+      - "80:80"
+    restart: unless-stopped
