@@ -22,4 +22,4 @@ jobs:
         run: |
           docker-compose down
           docker-compose up -d --build
-        working-directory: /home/bryam/Dockers/Porte-Polio
+        working-directory: /home/bryam/Dockers/Porte-Folio
