@@ -10,6 +10,8 @@ jobs:
     runs-on: self-hosted
 
     steps:
+      - name: recuperer les derniere modifications
+        run: git pull origin main 
       - name: Checkout du code
         uses: actions/checkout@v3
 
