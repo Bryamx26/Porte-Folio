@@ -10,12 +10,13 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: recuperer les derniere modifications
+      - name: Checkout du code
+        uses: actions/checkout@v3
+
+      - name: Récupérer les dernières modifications (forcer si besoin)
         run: |
           git fetch origin
           git reset --hard origin/main
-      - name: Checkout du code
-        uses: actions/checkout@v3
 
       - name: Installer Docker Compose (si besoin)
         run: |
@@ -24,6 +25,5 @@ jobs:
 
       - name: Lancer Docker Compose
         run: |
-          docker-compose down
           docker-compose up -d --build
         working-directory: /home/bryam/Dockers/Porte-Folio
