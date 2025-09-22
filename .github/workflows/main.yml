@@ -10,18 +10,24 @@ jobs:
     runs-on: self-hosted
 
     steps:
+      # Checkout du code
       - name: Checkout du code
         uses: actions/checkout@v3
 
-      - name: Récupérer les dernières modifications (forcer si besoin)
+      # Synchroniser avec origin/main dans le dossier du projet
+      - name: Récupérer les dernières modifications
         run: |
-          git pull origin main
+          git fetch origin
+          git reset --hard origin/main
+        working-directory: /home/bryam/Dockers/Porte-Folio
 
-      - name: Installer Docker Compose (si besoin)
+      # Installer Docker Compose si nécessaire
+      - name: Installer Docker Compose
         run: |
           docker --version
           docker-compose --version || sudo apt-get update && sudo apt-get install -y docker-compose
 
+      # Lancer Docker Compose
       - name: Lancer Docker Compose
         run: |
           docker-compose up -d --build
