@@ -15,8 +15,7 @@ jobs:
 
       - name: Récupérer les dernières modifications (forcer si besoin)
         run: |
-          git fetch origin
-          git reset --hard origin/main
+          git pull origin main
 
       - name: Installer Docker Compose (si besoin)
         run: |
