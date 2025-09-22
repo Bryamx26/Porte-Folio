@@ -110,6 +110,14 @@ p {
   align-items: center;
   width: 40%;
 }
+.Bomber-boat-Body{
+
+  display: flex;
+
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
 
 .exposeProject {
   display: flex;
