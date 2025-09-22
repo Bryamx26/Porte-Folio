@@ -11,7 +11,9 @@ jobs:
 
     steps:
       - name: recuperer les derniere modifications
-        run: git pull origin main 
+        run: |
+          git fetch origin
+          git reset --hard origin/main
       - name: Checkout du code
         uses: actions/checkout@v3
 
