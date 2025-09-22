@@ -1,0 +1,25 @@
+name: Déploiement porte-folio
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v3
+
+      - name: Installer Docker Compose (si besoin)
+        run: |
+          docker --version
+          docker-compose --version || sudo apt-get update && sudo apt-get install -y docker-compose
+
+      - name: Lancer Docker Compose
+        run: |
+          docker-compose down
+          docker-compose up -d --build
+        working-directory: /home/bryam/Dockers/Porte-Polio
