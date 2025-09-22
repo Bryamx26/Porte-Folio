@@ -10,7 +10,7 @@ function Vitamines() {
                 </div>
                 <section className="Bomber-boat-Body">
                     <div> <img src={"./images/bomber-boat.png"} alt="Bomber-boat" /></div>
-                    <div>hehe</div>
+                    <p>Ce projet m’a permis de travailler en équipe, d’évaluer mes différentes capacités et d’acquérir des compétences techniques en utilisant Python orienté objet</p>
                 </section>
 
 
